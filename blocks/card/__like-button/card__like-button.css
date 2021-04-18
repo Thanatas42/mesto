@@ -1,0 +1,15 @@
+.card__like-button {
+  position: absolute;
+  top: 315px;
+  right: 20px;
+  cursor: pointer;
+  transition: .15s;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: url(../../../images/card__image/vector-like.svg) no-repeat center;
+  background-size: 22px 19px;
+  width: 22px;
+  height: 19px;
+  border: none;
+}
