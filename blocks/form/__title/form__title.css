@@ -1,0 +1,10 @@
+.form__title {
+  margin: 0;
+  padding: 25px 22px 75px;
+  text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.2;
+}

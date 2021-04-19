@@ -12,4 +12,9 @@
   width: 22px;
   height: 19px;
   border: none;
+  filter: contrast(100%);
+}
+
+.card__like-button:hover {
+  opacity: .5;
 }

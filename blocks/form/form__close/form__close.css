@@ -1,0 +1,11 @@
+.form__close {
+  position: absolute;
+  top: -33.62px;
+  background: #FFFFFF;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  background: url(../../../images/form__close-icon/close_icon.svg) no-repeat center;
+  background-size: 26px 26px;
+  border:none;
+}
