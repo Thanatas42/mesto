@@ -2,9 +2,12 @@
   width: 282px;
   height: 50px;
   cursor: pointer;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
   transition: .15s;
   border: 2px solid #FFFFFF;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   background: url(../../../images/profile__add-button/profile__add-button.svg) no-repeat center;
@@ -12,6 +15,8 @@
 }
 
 .profile__add-button:hover {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
   opacity: .6;
 }

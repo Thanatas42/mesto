@@ -3,8 +3,11 @@
   top: 315px;
   right: 20px;
   cursor: pointer;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
   transition: .15s;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   background: url(../../../images/card__image/vector-like.svg) no-repeat center;
@@ -12,7 +15,8 @@
   width: 22px;
   height: 19px;
   border: none;
-  filter: contrast(100%);
+  -webkit-filter: contrast(100%);
+          filter: contrast(100%);
 }
 
 .card__like-button:hover {

@@ -19,27 +19,29 @@
   <main>
     <section class="form form_show_inactive">
       <div class="form__overlay">
-        <div class="form__edit">
-          <h2 class="form__title">Редактировать профиль</h2>
-          <ul>
+        <form class="form__edit" onsubmit="return false;">
+          <h2 class="form__title">Редактировать&nbsp;профиль</h2>
+          <ul class="form__list">
             <li class="form__field">
-              <p class="form__text">Жак-Ив Кусто</p>
+              <input class="form__text" value="Жак-Ив Кусто" type="text" name="name" maxlength="30">
             </li>
             <li class="form__field">
-              <p class="form__text">Исследователь океана</p>
+              <input class="form__text" value="Исследователь океана" type="text" name="subname" maxlength="30">
             </li>
           </ul>
-          <a><div class="form__save-buttom"><p>Сохарнить</p></div></a>
-          <button class="form__close"></button>
-        </div>
+          <button class="form__save-button" type="submit">Сохранить</button>
+          <button class="form__close-button" type="submit"></button>
+        </form>
       </div>
     </section>
     <section class="profile">
       <img class="profile__avatar" src="./images/profile__avatar/profile__avatar.jpg" alt="Аватар вашего профиля">
       <article class="profile-info">
-        <h2 class="profile-info__name">Жак-Ив Кусто
-          <button class="profile-info__edit-button"></button>
-        </h2>
+        <!--(ВНИМАНИЕ КОСТЫЛЬ!) В чем суть и зачем же тут span, дело в том что очень круто кнопка закрепляется справа от имени
+        не влияет на центровку и ровненько уходит вбок при расширении строки, однако js меняет и не только текстовое значение
+        он затирает и разметку в том числе, я подумаю еще как это более изящно сделать-->
+        <h2 class="profile-info__name"><span id=name>Жак-Ив Кусто</span><button
+            class="profile-info__edit-button"></button></h2>
         <!--Спорный момент, у меня нет заголовка h1, поэтому
           он здесь, но хочется поставить h2, так как то правильнее по смыслу-->
         <p class="profile-info__subname">Исследователь океана</p>
