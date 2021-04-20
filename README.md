@@ -12,4 +12,4 @@
 
 **Ссылка на проект**
 
-* [Ссылка на cайт в gh-pages]https://thanatas42.github.io/mesto/)
+* [Ссылка на cайт в gh-pages](https://thanatas42.github.io/mesto/)
