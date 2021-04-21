@@ -6,12 +6,11 @@
   line-height: 1.2;
   color: #000000;
   -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  width: 200px;
   margin: 0;
-  padding: 25px 0 31px 21px;
-  width: 65%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-margin-before: 0;

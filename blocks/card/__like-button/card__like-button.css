@@ -1,13 +1,13 @@
 .card__like-button {
-  position: absolute;
-  top: 315px;
-  right: 20px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   cursor: pointer;
   -webkit-transition: .15s;
   -o-transition: .15s;
   transition: .15s;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background: url(../../../images/card__image/vector-like.svg) no-repeat center;
@@ -15,8 +15,6 @@
   width: 22px;
   height: 19px;
   border: none;
-  -webkit-filter: contrast(100%);
-          filter: contrast(100%);
 }
 
 .card__like-button:hover {
