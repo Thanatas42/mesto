@@ -1,24 +1,18 @@
-.form__title {
-  margin: auto;
-  padding: 25px 0 75px;
-  text-align: center;
+.popup__text {
+  width: 100%;
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
-  font-weight: 900;
-  font-size: 18px;
+  font-weight: normal;
+  font-size: 14px;
   line-height: 1.2;
-  width: 238px;
+  color: #000000;
+  margin: 0;
+  padding: 0 0 13px;
+  border: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-margin-before: 0;
   margin-block-start: 0;
   -webkit-margin-after: 0;
   margin-block-end: 0;
-}
-
-@media screen and (min-width: 880px) {
-  .form__title {
-    width: 330px;
-    font-size: 24px;
-  }
 }

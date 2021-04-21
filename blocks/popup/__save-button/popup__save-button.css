@@ -1,9 +1,9 @@
-.form__save-button {
-  margin: 0 22px 25px;
-  width: calc(100% - 44px);
-  height: 46px;
+.popup__save-button {
+  margin: 0;
+  padding: 14px 0 18px;
+  width: 100%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: #000;
   border: none;
   color: #FFF;
@@ -20,10 +20,20 @@
   margin-block-start: 0;
   -webkit-margin-after: 0;
   margin-block-end: 0;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+}
+
+.popup__save-button:hover {
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 880px) {
-  .form__save-button {
+  .popup__save-button {
     font-size: 18px;
   }
 }

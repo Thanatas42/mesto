@@ -1,6 +1,5 @@
 .profile-info__name {
-  margin: auto;
-  position: relative;
+  padding-left: 18px;
   font-family: 'Inter', Arial, sans-serif;
 	font-style: normal;
   font-weight: 500;
@@ -8,18 +7,23 @@
   line-height: 1.2;
   color: #FFFFFF;
   -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
   -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-block-end: 0;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 880px) {
   .profile-info__name {
+    padding-left: 0;
     margin: 0;
   }
 }
