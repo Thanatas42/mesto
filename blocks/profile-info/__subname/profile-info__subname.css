@@ -18,3 +18,9 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media screen and (min-width: 880px) {
+  .profile-info__subname {
+    font-size: 18px;
+  }
+}
