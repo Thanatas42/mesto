@@ -16,7 +16,7 @@
   <header class="header">
     <img class="header__logo" src="./images/header__logo.svg" alt="Проект Место">
   </header>
-  <main>
+  <main class="main">
     <section class="profile">
       <img class="profile__avatar" src="./images/profile__avatar/profile__avatar.jpg" alt="Аватар вашего профиля">
       <article class="profile-info">
@@ -30,8 +30,10 @@
     </section>
     <section>
       <ul class="cards">
+        <!--
         <li class="card">
           <img class="card__image" src="./images/card__image/karach-cherkes.jpg" alt="Монастырь в горах Черкессии">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Карачаево-Черкессия</h2>
             <button class="card__like-button" type="button"></button>
@@ -39,6 +41,7 @@
         </li>
         <li class="card">
           <img class="card__image" src="./images/card__image/elbrus.jpg" alt="Пейзажи на фоне Горы Эльбрус">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Гора Эльбрус</h2>
             <button class="card__like-button" type="button"></button>
@@ -46,6 +49,7 @@
         </li>
         <li class="card">
           <img class="card__image" src="./images/card__image/dombay.jpg" alt="Пейзажи гор на Домбае">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Домбай</h2>
             <button class="card__like-button" type="button"></button>
@@ -53,6 +57,7 @@
         </li>
         <li class="card">
           <img class="card__image" src="./images/card__image/bashkiria.jpg" alt="Пейзажи Уральских гор в Башкирии">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Башкирия</h2>
             <button class="card__like-button" type="button"></button>
@@ -60,6 +65,7 @@
         </li>
         <li class="card">
           <img class="card__image" src="./images/card__image/baikal.jpg" alt="Озеро Байкал на закате">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Байкал</h2>
             <button class="card__like-button" type="button"></button>
@@ -68,28 +74,66 @@
         <li class="card">
           <img class="card__image" src="./images/card__image/krasnodar.jpg"
             alt="Вид на скалу Парус, Краснодарский край">
+          <button class="card__delete-button" type="button"></button>
           <div class="card__container">
             <h2 class="card__title">Скала Парус</h2>
             <button class="card__like-button" type="button"></button>
           </div>
-        </li>
+        </li>-->
       </ul>
     </section>
-    <section class="popup">
-      <form class="popup__container" onsubmit="return false;" action="" name="popup" method="POST">
+    <section class="popup popup_edit-profile">
+      <form class="popup__container" onsubmit="return false;" name="popup" method="POST">
         <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
         <ul class="popup__list">
           <li class="popup__field">
             <input class="popup__text popup__text_name" value="Жак-Ив Кусто" type="text" name="name" maxlength="30">
           </li>
           <li class="popup__field">
-            <input class="popup__text popup__text_subname" value="Исследователь океана" type="text" name="subname" maxlength="30">
+            <input class="popup__text popup__text_subname" value="Исследователь океана" type="text" name="subname"
+              maxlength="30">
           </li>
         </ul>
-        <button class="popup__save-button" type="submit">Сохранить</button>
-        <button class="popup__close-button" type="reset"></button>
+        <button class="popup__save-button popup_edit-save" type="submit">Сохранить</button>
+        <button class="popup__close-button popup_edit-close" type="reset"></button>
       </form>
     </section>
+    <section class="popup popup_add-card">
+      <form class="popup__container" onsubmit="return false;" name="popup" method="POST">
+        <h2 class="popup__title">Новое&nbsp;место</h2>
+        <ul class="popup__list">
+          <li class="popup__field">
+            <input class="popup__text popup__post_name" value="Название" type="text" name="name"
+              onfocus="this.value=''">
+          </li>
+          <li class="popup__field">
+            <input class="popup__text popup__post_subname" value="Ссылка на картинку" type="text" name="subname"
+              onfocus="this.value=''">
+          </li>
+        </ul>
+        <button class="popup__save-button popup_add-save" type="submit">Сохранить</button>
+        <button class="popup__close-button popup_add-close" type="reset"></button>
+      </form>
+    </section>
+    <section class="popup show_popup-view">
+      <div class="popup__container popup_view">
+        <figure class="popup__figure">
+          <img class="popup__image" src="./images/card__image/krasnodar.jpg" alt="Озеро Байкал на закате">
+          <figcaption class="popup__figure-name">Кисловодск</figcaption>
+        </figure>
+        <button class="popup__close-button popup_view-close" type="reset"></button>
+      </div>
+    </section>
+    <template id="card">
+      <div class="card">
+        <img class="card__image" src="" alt="Иллюстрация к посту">
+        <button class="card__delete-button" type="button"></button>
+        <div class="card__container">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </div>
+    </template>
   </main>
   <footer class="footer">
     <p class="footer__text">&copy; 2020 Mesto Russia</p>

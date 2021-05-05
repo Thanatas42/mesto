@@ -1,6 +1,18 @@
 .popup {
-	display: none;
+  display: none;
+  /*намерено сделана такая анимация, использование visibility: hidden;
+  оч сомнительный способ, ищу другой*/
 }
+
+@keyframes move1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .popup:before {
 	content: '';
   background: #000;
@@ -11,4 +23,5 @@
   height: 100%;
   opacity: 0.7;
   z-index: 9999;
+
 }

@@ -20,3 +20,7 @@
 .card__like-button:hover {
   opacity: .5;
 }
+
+.card__like-button:focus {
+  border: none;
+}

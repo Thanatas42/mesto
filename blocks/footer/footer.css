@@ -8,5 +8,6 @@
   .footer {
     padding: 67px 0 60px;
     width: 880px;
+    margin-bottom: auto;
   }
 }

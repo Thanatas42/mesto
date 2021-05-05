@@ -1,23 +1,51 @@
-let editProfile = document.querySelector('.popup');
-let closeButton = document.querySelector('.popup__close-button');
-let editButton = document.querySelector('.profile-info__edit-button');
-let saveButton = document.querySelector('.popup__save-button')
+const editProfile = document.querySelector('.popup_edit-profile');
+const addCard = document.querySelector('.popup_add-card');
+const closeEditButton = document.querySelector('.popup_edit-close');
+const showEditButton = document.querySelector('.profile-info__edit-button');
+const saveEditButton = document.querySelector('.popup_edit-save');
+const addCardButton = document.querySelector('.profile__add-button');
+const closeAddButton = document.querySelector('.popup_add-close');
+const saveAddButton = document.querySelector('.popup__save-button');
+const addSaveButton = document.querySelector('.popup_add-save');
 let formName = document.querySelector('.profile-info__name');
 let formSubname = document.querySelector('.profile-info__subname');
 let setName = document.querySelector('.popup__text_name');
 let setSubname = document.querySelector('.popup__text_subname');
-/*хотел привязать на классы а не имена импутов, просто там однотипные элементы
-соответсвенно имеют один класс, можно привязать по id, так наверно правильнее*/
+const cards = document.querySelector('.cards');
 
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 
-function showForm() {
-  setName.value = formName.textContent;
-  setSubname.value = formSubname.textContent;
+function showFormEditProfile() {
   editProfile.classList.toggle('popup_opened');
 }
 
-function closeForm() {
-  editProfile.classList.toggle('popup_opened');
+function showFormAddCard() {
+  addCard.classList.toggle('popup_opened');
 }
 
 function editForm() {
@@ -26,9 +54,51 @@ function editForm() {
   editProfile.classList.toggle('popup_opened');
 }
 
-editButton.addEventListener('click', showForm);
-closeButton.addEventListener('click', closeForm);
-saveButton.addEventListener('click', editForm);
+function createCard (link, name, alt) {
+  const cardTemplate = document.querySelector('#card').content;
+  const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
 
-console.log(editProfile.classList);
-console.log(formSubname.textContent);
+  cardElement.querySelector('.card__image').src = link;
+  cardElement.querySelector('.card__title').textContent = name;
+  cardElement.querySelector('.card__image').alt = alt
+  cardElement.querySelector('.card__like-button').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('card__like-button_theme_active');
+  });
+  cardElement.querySelector('.card__delete-button').addEventListener('click', function(evt) {
+    cardElement.remove();
+  });
+
+  const viewpopup = document.querySelector(".show_popup-view");
+  cardElement.querySelector('.card__image').addEventListener('click', function(evt) {
+    const viewpopup = document.querySelector(".show_popup-view");
+    viewpopup.classList.toggle('popup_opened');
+    const src = evt.target.getAttribute('src');
+    viewpopup.querySelector('.popup__image').setAttribute('src', src);
+    viewpopup.querySelector('.popup__figure-name').textContent = alt;
+    viewpopup.querySelector('.popup_view-close');
+  });
+  if (link !== 'Ссылка на картинку' && name !== 'Название') {cards.append(cardElement);}
+  else {alert("Введите название и адрес карточки")};
+}
+document.querySelector('.popup_view-close').addEventListener('click', () => {
+  document.querySelector(".show_popup-view").classList.toggle('popup_opened');
+});
+
+showEditButton.addEventListener('click', showFormEditProfile);
+closeEditButton.addEventListener('click', showFormEditProfile);
+saveEditButton.addEventListener('click', editForm);
+addCardButton.addEventListener('click', showFormAddCard);
+closeAddButton.addEventListener('click', showFormAddCard);
+addSaveButton.addEventListener('click', () => {
+  const name = document.querySelector('.popup__post_name');
+  const link = document.querySelector('.popup__post_subname');
+  createCard(link.value, name.value);
+});
+
+initialCards.forEach (function (item) {
+  createCard(item.link, item.name, item.name);
+});
+
+const name = document.querySelector('.popup__post_name');
+const link = document.querySelector('.popup__post_subname');
+
