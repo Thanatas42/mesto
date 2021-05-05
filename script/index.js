@@ -1,12 +1,12 @@
 const editProfile = document.querySelector('.popup_edit-profile');
 const addCard = document.querySelector('.popup_add-card');
-const closeEditButton = document.querySelector('.popup_edit_close');
+const closeEditButton = document.querySelector('.popup__close-button_edit');
 const showEditButton = document.querySelector('.profile-info__edit-button');
-const saveEditButton = document.querySelector('.popup_edit_save');
+const saveEditButton = document.querySelector('.popup__save-button_edit');
 const addCardButton = document.querySelector('.profile__add-button');
-const closeAddButton = document.querySelector('.popup_add_close');
+const closeAddButton = document.querySelector('.popup__close-button_add');
 const saveAddButton = document.querySelector('.popup__save-button');
-const addSaveButton = document.querySelector('.popup_add_save');
+const addSaveButton = document.querySelector('.popup__save-button_add');
 let formName = document.querySelector('.profile-info__name');
 let formSubname = document.querySelector('.profile-info__subname');
 let setName = document.querySelector('.popup__text_name');
@@ -68,14 +68,14 @@ function createCard (link, name, alt) {
     cardElement.remove();
   });
 
-  const viewpopup = document.querySelector(".show_popup_view");
+  const viewpopup = document.querySelector(".popup_view");
   cardElement.querySelector('.card__image').addEventListener('click', function(evt) {
-    const viewpopup = document.querySelector(".show_popup_view");
+    const viewpopup = document.querySelector(".popup_view");
     viewpopup.classList.toggle('popup_opened');
     const src = evt.target.getAttribute('src');
     viewpopup.querySelector('.popup__image').setAttribute('src', src);
     viewpopup.querySelector('.popup__figure-name').textContent = alt;
-    viewpopup.querySelector('.popup_view_close');
+    viewpopup.querySelector('.popup__close-button_view');
   });
   if (link !== 'Ссылка на картинку' && name !== 'Название') {
     cards.append(cardElement);
@@ -83,8 +83,8 @@ function createCard (link, name, alt) {
   }
   else {alert("Введите название и адрес карточки")};
 }
-document.querySelector('.popup_view_close').addEventListener('click', () => {
-  document.querySelector(".show_popup_view").classList.toggle('popup_opened');
+document.querySelector('.popup__close-button_view').addEventListener('click', () => {
+  document.querySelector(".popup_view").classList.toggle('popup_opened');
 });
 
 showEditButton.addEventListener('click', showFormEditProfile);
