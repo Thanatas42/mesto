@@ -8,7 +8,7 @@ const closeAddButton = document.querySelector('.popup__close-button_add');
 const addSaveButton = document.querySelector('.popup__container_type_add-card');
 const cards = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#card').content;
-const viewpopup = document.querySelector(".popup_view");
+const viewpopup = document.querySelector(".popup_type_show-image");
 const name = document.querySelector('.popup__post-name');
 const link = document.querySelector('.popup__post-subname');
 
