@@ -1,7 +1,5 @@
 .popup {
-  display: none;
-  /*намерено сделана такая анимация, использование visibility: hidden;
-  оч сомнительный способ, ищу другой*/
+  visibility: hidden;
 }
 
 @keyframes move1 {

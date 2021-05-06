@@ -4,7 +4,7 @@
   height: 18px;
   border: 1px solid #FFFFFF;
   background: url(../../../images/profile-info__edit-button/edit-button.svg) no-repeat center;
-  background-size: 7.5px 7.5px;
+  background-size: 10px 10px;
   cursor: pointer;
   -webkit-transition: .15s;
   -o-transition: .15s;
@@ -20,6 +20,8 @@
 
 @media screen and (min-width: 880px) {
   .profile-info__edit-button {
-    margin: 8px 0 0 18px;
+    margin: 17px 0 0 18px;
+    width: 24px;
+  height: 24px;
   }
 }

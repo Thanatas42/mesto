@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="./pages/index.css">
   <link rel="icon" href="./images/web-site_icon.svg">
   <meta name="description" content="Проект &#171;Место&#187;">
-  <meta name="autor" content="Дмитрий Дудин">
+  <meta name="author" content="Дмитрий Дудин">
 </head>
 
 <body class="body">
   <header class="header">
-    <img class="header__logo" src="./images/header__logo.svg" alt="Проект Место">
+    <a href="./index.html"><img class="header__logo" src="./images/header__logo.svg" alt="Проект Место"></a>
   </header>
   <main class="main">
     <section class="profile">
@@ -22,7 +22,7 @@
       <article class="profile-info">
         <div class="profile-info__container">
           <h1 class="profile-info__name">Жак-Ив Кусто</h1>
-          <button class="profile-info__edit-button" type="button"></button>
+          <button class="profile-info__edit-button" type="button" aria-label="Редактировать"></button>
         </div>
         <p class="profile-info__subname">Исследователь океана</p>
       </article>
@@ -30,103 +30,49 @@
     </section>
     <section>
       <ul class="cards">
-        <!--
-        <li class="card">
-          <img class="card__image" src="./images/card__image/karach-cherkes.jpg" alt="Монастырь в горах Черкессии">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Карачаево-Черкессия</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img class="card__image" src="./images/card__image/elbrus.jpg" alt="Пейзажи на фоне Горы Эльбрус">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Гора Эльбрус</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img class="card__image" src="./images/card__image/dombay.jpg" alt="Пейзажи гор на Домбае">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Домбай</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img class="card__image" src="./images/card__image/bashkiria.jpg" alt="Пейзажи Уральских гор в Башкирии">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Башкирия</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img class="card__image" src="./images/card__image/baikal.jpg" alt="Озеро Байкал на закате">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Байкал</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="card">
-          <img class="card__image" src="./images/card__image/krasnodar.jpg"
-            alt="Вид на скалу Парус, Краснодарский край">
-          <button class="card__delete-button" type="button"></button>
-          <div class="card__container">
-            <h2 class="card__title">Скала Парус</h2>
-            <button class="card__like-button" type="button"></button>
-          </div>
-        </li>-->
+
       </ul>
     </section>
-    <section class="popup popup_edit-profile">
-      <form class="popup__container" onsubmit="return false;" name="popup" method="POST">
+    <div class="popup popup_type_edit-form">
+      <form class="popup__container popup__container_type_edit-form" onsubmit="return false;" name="popup"
+        method="POST">
         <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
-        <ul class="popup__list">
-          <li class="popup__field">
-            <input class="popup__text popup__text_name" value="Жак-Ив Кусто" type="text" name="name" maxlength="30">
-          </li>
-          <li class="popup__field">
-            <input class="popup__text popup__text_subname" value="Исследователь океана" type="text" name="subname"
-              maxlength="30">
-          </li>
-        </ul>
+        <div class="popup__field">
+          <input class="popup__text popup__text_name" value="" type="text" name="name" maxlength="30">
+        </div>
+        <div class="popup__field">
+          <input class="popup__text popup__text_subname" value="" type="text" name="subname" maxlength="30">
+        </div>
         <button class="popup__save-button popup__save-button_edit" type="submit">Сохранить</button>
         <button class="popup__close-button popup__close-button_edit" type="reset"></button>
       </form>
-    </section>
-    <section class="popup popup_add-card">
-      <form class="popup__container" onsubmit="return false;" name="popup" method="POST">
+    </div>
+    <div class="popup popup_type_add-card">
+      <form class="popup__container popup__container_type_add-card" onsubmit="return false;" name="popup" method="POST">
         <h2 class="popup__title">Новое&nbsp;место</h2>
-        <ul class="popup__list">
-          <li class="popup__field">
-            <input class="popup__text popup__post-name" value="Название" type="text" name="name"
-              onfocus="this.value=''">
-          </li>
-          <li class="popup__field">
-            <input class="popup__text popup__post-subname" value="Ссылка на картинку" type="text" name="subname"
-              onfocus="this.value=''">
-          </li>
-        </ul>
+        <div class="popup__field">
+          <input class="popup__text popup__post-name" value="" type="text" name="name" onfocus="this.value=''">
+          <!--Не совсем понимаю зачем удалять у этих инпутов value, потому что значение всегда одно и то же при открытии-->
+        </div>
+        <div class="popup__field">
+          <input class="popup__text popup__post-subname" value="" type="text" name="subname" onfocus="this.value=''">
+        </div>
         <button class="popup__save-button popup__save-button_add" type="submit">Сохранить</button>
         <button class="popup__close-button popup__close-button_add" type="reset"></button>
       </form>
-    </section>
-    <section class="popup popup_view">
+    </div>
+    <div class="popup opup_type_show-image popup_view">
       <div class="popup__container popup__container_view">
         <figure class="popup__figure">
           <img class="popup__image" src="./images/card__image/krasnodar.jpg" alt="Озеро Байкал на закате">
-          <figcaption class="popup__figure-name">Кисловодск</figcaption>
+          <figcaption class="popup__figure-name"></figcaption>
         </figure>
         <button class="popup__close-button popup__close-button_view" type="reset"></button>
       </div>
-    </section>
+    </div>
     <template id="card">
       <div class="card">
-        <img class="card__image" src="123" alt="Иллюстрация к посту">
+        <img class="card__image" src="" alt="Иллюстрация к посту">
         <button class="card__delete-button" type="button"></button>
         <div class="card__container">
           <h2 class="card__title"></h2>
@@ -138,6 +84,7 @@
   <footer class="footer">
     <p class="footer__text">&copy; 2020 Mesto Russia</p>
   </footer>
+  <script src="script/initial-Cards.js"></script>
   <script src="script/index.js"></script>
 </body>
 

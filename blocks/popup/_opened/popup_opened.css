@@ -1,5 +1,5 @@
 .popup_opened {
-  display: block;
+  visibility: visible;
   animation-name: move;
   animation-duration: .5s;
   animation-fill-mode: forwards;

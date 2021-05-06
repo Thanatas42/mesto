@@ -1,6 +1,6 @@
 .profile {
   margin: auto;
-  padding: 42px 0 36px;
+  padding: 42px 10px 36px;
   max-width: calc(100% - 38px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 880px) {
   .profile {
-    padding: 40px 0 51px;
+    padding: 40px 10px 51px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;

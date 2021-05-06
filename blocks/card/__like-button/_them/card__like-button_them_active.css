@@ -6,8 +6,8 @@
   border: none;
 }
 
-button,
-button:active,
-button:focus {
+.card__like-button_theme_active,
+.card__like-button_theme_active:active,
+.card__like-button_theme_active:focus {
     outline: none;
 }
