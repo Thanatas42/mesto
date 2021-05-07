@@ -4,24 +4,16 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('./inter-v3-cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./Inter-Regular.woff2') format('woff2'), /* Super Modern Browsers */
 }
 
+/* inter-500 - latin_cyrillic-ext_cyrillic */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   src: local(''),
-       url('./Inter-Medium.woff2') format('woff2'), /* Super Modern Browsers */
-}
-
-/* inter-700 - cyrillic */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('./inter-v3-cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./Inter-Medium.woff2') format('woff2'), /* Super Modern Browsers */
 }
 
 /* inter-900 - cyrillic */
@@ -30,5 +22,5 @@
   font-style: normal;
   font-weight: 900;
   src: local(''),
-       url('./inter-v3-cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./Inter-Black.woff2') format('woff2'), /* Super Modern Browsers */
 }

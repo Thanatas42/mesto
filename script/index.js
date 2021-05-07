@@ -11,15 +11,21 @@ const cardTemplate = document.querySelector('#card').content;
 const viewpopup = document.querySelector(".popup_type_show-image");
 const name = document.querySelector('.popup__post-name');
 const link = document.querySelector('.popup__post-subname');
+const profileName = document.querySelector('.profile-info__name');
+const profileSubName = document.querySelector('.profile-info__subname');
+const popupTextName = document.querySelector('.popup__text_name');
+const popupTextSubName = document.querySelector('.popup__text_subname');
+const popupImage = document.querySelector('.popup__image');
+const popupFigureName = document.querySelector('.popup__figure-name');
 
-function openPopup(popup) {
+function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
 }
 
 function editForm() {
-  document.querySelector('.profile-info__name').textContent = document.querySelector('.popup__text_name').value;
-  document.querySelector('.profile-info__subname').textContent = document.querySelector('.popup__text_subname').value;
-  openPopup(editProfile);
+  profileName.textContent = popupTextName.value;
+  profileSubName.textContent = popupTextSubName.value;
+  togglePopup(editProfile);
 }
 
 
@@ -37,41 +43,37 @@ function createCard (link, name) {
   });
 
   cardElement.querySelector('.card__image').addEventListener('click', function(evt) {
-    openPopup(viewpopup);
-    const src = evt.target.getAttribute('src');
-    viewpopup.querySelector('.popup__image').src = src;
-    viewpopup.querySelector('.popup__figure-name').textContent = name;
+    togglePopup(viewpopup);
+    popupImage.src = evt.target.getAttribute('src');
+    popupFigureName.textContent = name;
   });
   return cardElement
 }
 
 
 document.querySelector('.popup__close-button_view').addEventListener('click', () => {
-  openPopup(viewpopup);
+  togglePopup(viewpopup);
 });
 
 showEditButton.addEventListener('click', () => {
-  openPopup(editProfile);
+  togglePopup(editProfile);
   document.querySelector('.popup__text_name').value = document.querySelector('.profile-info__name').textContent;
   document.querySelector('.popup__text_subname').value = document.querySelector('.profile-info__subname').textContent;
 });
 closeEditButton.addEventListener('click', () => {
-  openPopup(editProfile);
+  togglePopup(editProfile);
 });
 saveEditButton.addEventListener('submit', editForm);
 addCardButton.addEventListener('click', () => {
-  openPopup(addCard);
-  document.querySelector('.popup__post-name').value = 'Название';
-  document.querySelector('.popup__post-subname').value = 'Ссылка на картинку';
-  /*согласно макету так или иначе в инпуте должна быть строка Название и Ссылка на картинку*/
+  togglePopup(addCard);
 });
 closeAddButton.addEventListener('click', () => {
-  openPopup(addCard);
+  togglePopup(addCard);
 });
 
 addSaveButton.addEventListener('submit', () => {
   cards.prepend(createCard(link.value, name.value));
-  openPopup(addCard);
+  togglePopup(addCard);
 });
 
 initialCards.forEach (function (item) {

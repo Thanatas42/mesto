@@ -23,8 +23,10 @@
   .popup__close-button {
     top: -43px;
     left: 434px;
-    width: 40px;
-    height: 40px;
-    background-size: 40px 40px;
+    width: 35px;
+    height: 35px;
+    background-size: 35px 35px;
+    /*По pixelPerfect вижу да что кнопка больше, что оч странно
+    в фигме 40px и тут было 40*/
   }
 }
