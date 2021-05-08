@@ -17,6 +17,7 @@ const popupTextName = document.querySelector('.popup__text_name');
 const popupTextSubName = document.querySelector('.popup__text_subname');
 const popupImage = document.querySelector('.popup__image');
 const popupFigureName = document.querySelector('.popup__figure-name');
+const closeButtonView = document.querySelector('.popup__close-button_view');
 
 function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
@@ -51,14 +52,14 @@ function createCard (link, name) {
 }
 
 
-document.querySelector('.popup__close-button_view').addEventListener('click', () => {
+closeButtonView.addEventListener('click', () => {
   togglePopup(viewpopup);
 });
 
 showEditButton.addEventListener('click', () => {
   togglePopup(editProfile);
-  document.querySelector('.popup__text_name').value = document.querySelector('.profile-info__name').textContent;
-  document.querySelector('.popup__text_subname').value = document.querySelector('.profile-info__subname').textContent;
+  popupTextName.value = profileName.textContent;
+  popupTextSubName.value = profileSubName.textContent;
 });
 closeEditButton.addEventListener('click', () => {
   togglePopup(editProfile);

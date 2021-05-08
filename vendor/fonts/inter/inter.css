@@ -1,26 +1,28 @@
-/* inter-regular - cyrillic */
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
+  font-style:  normal;
   font-weight: 400;
-  src: local(''),
-       url('./Inter-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  font-display: swap;
+  src: url("./Inter-Regular.woff2") format("woff2"),
+       url("./Inter-Regular.woff") format("woff");
 }
 
-/* inter-500 - latin_cyrillic-ext_cyrillic */
+/* Inter normal medium */
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
+  font-style:  normal;
   font-weight: 500;
-  src: local(''),
-        url('./Inter-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+  font-display: swap;
+  src: url("./Inter-Medium.woff2") format("woff2"),
+       url("./Inter-Medium.woff") format("woff");
 }
 
-/* inter-900 - cyrillic */
+/* Inter normal black */
 @font-face {
   font-family: 'Inter';
-  font-style: normal;
+  font-style:  normal;
   font-weight: 900;
-  src: local(''),
-       url('./Inter-Black.woff2') format('woff2'), /* Super Modern Browsers */
+  font-display: swap;
+  src: url("./Inter-Black.woff2") format("woff2"),
+       url("./Inter-Black.woff") format("woff");
 }

@@ -1,13 +1,13 @@
 .popup__close-button {
   position: absolute;
-  top: -33px;
-  right: 0;
+  top: -42px;
+  right: 40px;
   background-color: #FFFFFF;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background: url(../../../images/popup__close-icon/close_icon.svg) no-repeat center;
-  background-size: 26px 26px;
+  background-size: 20px 20px;
   border:none;
   margin: 0;
   padding: 0;
@@ -21,12 +21,10 @@
 
 @media screen and (min-width: 880px) {
   .popup__close-button {
-    top: -43px;
-    left: 434px;
-    width: 35px;
-    height: 35px;
-    background-size: 35px 35px;
-    /*По pixelPerfect вижу да что кнопка больше, что оч странно
-    в фигме 40px и тут было 40*/
+    top: -37px;
+    left: 430px;
+    width: 31px;
+    height: 31px;
+    background-size: 31px 31px;
   }
 }
