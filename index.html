@@ -35,29 +35,38 @@
       </ul>
     </section>
     <div class="popup popup_type_edit-form">
-      <form class="popup__container popup__container_type_edit-form" onsubmit="return false;" name="popup"
-        method="POST">
+      <form class="popup__container popup__container_type_edit-form popup__form" onsubmit="return false;" name="edit"
+        method="POST" novalidate>
         <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
         <div class="popup__field">
-          <input class="popup__text popup__text_name" value="" type="text" name="name" maxlength="30">
+          <input id="name-profile" class="popup__text popup__text_name popup__input" type="text" name="name"
+            minlength="2" maxlength="40" required>
+          <span class="popup__input-error" id="name-profile-error"></span>
         </div>
         <div class="popup__field">
-          <input class="popup__text popup__text_subname" value="" type="text" name="subname" maxlength="30">
+          <input id="description-profile" class="popup__text popup__text_subname popup__input" type="text" name="subname"
+            minlength="2" maxlength="40" required>
+          <span class="popup__input-error" id="description-profile-error"></span>
         </div>
-        <button class="popup__save-button popup__save-button_edit" type="submit">Сохранить</button>
+        <button class="popup__save-button popup__save-button_edit popup__button" type="submit" disabled>Сохранить</button>
         <button class="popup__close-button popup__close-button_edit" type="reset"></button>
       </form>
     </div>
     <div class="popup popup_type_add-card">
-      <form class="popup__container popup__container_type_add-card" onsubmit="return false;" name="popup" method="POST">
+      <form class="popup__container popup__container_type_add-card popup__form" onsubmit="return false;" name="popup"
+        method="POST" novalidate>
         <h2 class="popup__title">Новое&nbsp;место</h2>
         <div class="popup__field">
-          <input class="popup__text popup__post-name" placeholder="Название" type="text" name="name">
+          <input id="name-place" class="popup__text popup__post-name popup__input" placeholder="Название" type="text" name="addCard"
+            required>
+            <span class="popup__input-error" id="name-place-error"></span>
         </div>
         <div class="popup__field">
-          <input class="popup__text popup__post-subname" placeholder="Ссылка на картинку" type="text" name="subname">
+          <input id="link" class="popup__text popup__post-subname popup__input" placeholder="Ссылка на картинку" type="url"
+            name="subname" required>
+            <span class="popup__input-error" id="link-error"></span>
         </div>
-        <button class="popup__save-button popup__save-button_add" type="submit">Создать</button>
+        <button class="popup__save-button popup__save-button_add popup__button" type="submit">Создать</button>
         <button class="popup__close-button popup__close-button_add" type="reset"></button>
       </form>
     </div>
@@ -84,8 +93,9 @@
   <footer class="footer">
     <p class="footer__text">&copy; 2020 Mesto Russia</p>
   </footer>
-  <script src="script/initial-Cards.js"></script>
-  <script src="script/index.js"></script>
+  <script src="./script/initial-Cards.js"></script>
+  <script src="./script/validate.js"></script>
+  <script src="./script/index.js"></script>
 </body>
 
 </html>

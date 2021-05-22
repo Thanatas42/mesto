@@ -19,6 +19,11 @@
 @import url(../blocks/popup/__container/_view/popup__container_view.css);
 @import url(../blocks/popup/__figure-name/popup__figure-name.css);
 @import url(../blocks/popup/__close-button/_view/popup__close-button_view.css);
+@import url(../blocks/popup/__input/popup__input-error.css);
+@import url(../blocks/popup/__input/_type/popup__input_type_error.css);
+@import url(../blocks/popup/__input/_type/popup__error_visible.css);
+@import url(../blocks/popup/__button/popup__button_disabled.css);
+
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
