@@ -22,7 +22,3 @@
 .popup__text:focus {
   opacity: 1;
 }
-
-.popup__text:invalid {
-  border-bottom: 1px solid red; /* красная рамка для некорректных данных */
-}

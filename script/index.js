@@ -9,7 +9,7 @@ const addSaveButton = document.querySelector('.popup__container_type_add-card');
 const cards = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#card').content;
 const viewpopup = document.querySelector('.popup_type_show-image');
-const name = document.querySelector('.popup__post-name');
+const postName = document.querySelector('.popup__post-name');
 const link = document.querySelector('.popup__post-subname');
 const profileName = document.querySelector('.profile-info__name');
 const profileSubName = document.querySelector('.profile-info__subname');
@@ -23,12 +23,14 @@ const popupAdd = document.querySelector('.popup__save-button_add');
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  removeListenersoff();
+  popup.removeEventListener('click', closePopupMouse);
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  setListenersoff();
+  popup.addEventListener('click', closePopupMouse);
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 function editForm() {
@@ -40,10 +42,11 @@ function editForm() {
 
 function createCard(link, name) {
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
+  const cardImage = cardElement.querySelector('.card__image');
 
-  cardElement.querySelector('.card__image').src = link;
+  cardImage.src = link;
   cardElement.querySelector('.card__title').textContent = name;
-  cardElement.querySelector('.card__image').alt = name;
+  cardImage.alt = name;
   cardElement.querySelector('.card__like-button').addEventListener('click', function (evt) {
     evt.target.classList.toggle('card__like-button_theme_active');
   });
@@ -51,10 +54,12 @@ function createCard(link, name) {
     cardElement.remove();
   });
 
-  cardElement.querySelector('.card__image').addEventListener('click', function (evt) {
+  cardImage.addEventListener('click', function (evt) {
     openPopup(viewpopup);
     popupImage.src = evt.target.getAttribute('src');
+    popupImage.alt = name;
     popupFigureName.textContent = name;
+
   });
   return cardElement
 }
@@ -81,42 +86,25 @@ closeAddButton.addEventListener('click', () => {
 });
 
 addSaveButton.addEventListener('submit', () => {
-  cards.prepend(createCard(link.value, name.value));
+  cards.prepend(createCard(link.value, postName.value));
   closePopup(addCard);
   link.value = "";
-  name.value = "";
+  postName.value = "";
   popupAdd.disabled = true;
 });
 
-function setListenersoff() {
-  popup.forEach((popup) => {
-    document.addEventListener('keydown', (evt) => {
-      if (evt.code === 'Escape' || evt.code === 27) {
-        closePopup(popup);
-        /*Вешал листенер на попап как ниже, не работает, повесил на документ целиком, проверка на кей код в попытках почнить*/
-      };
-    });
-    popup.addEventListener('mousedown', (evt) => {
-      if (evt.target === evt.currentTarget) {
-        closePopup(popup);
-      }
-    });
-  });
+function closePopupMouse(evt) {
+  if (evt.target === evt.currentTarget) {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
+  }
 }
 
-function removeListenersoff() {
-  popup.forEach((popup) => {
-    document.removeEventListener('keydown', (evt) => {
-      if (evt.code === 'Escape' || evt.code === 27) {
-        closePopup(popup);
-      };
-    });
-    popup.removeEventListener('mousedown', (evt) => {
-      if (evt.target === evt.currentTarget) {
-        closePopup(popup);
-      }
-    });
-  });
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
+  };
 }
 
 initialCards.forEach(function (item) {
@@ -129,7 +117,7 @@ const config = {
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+  errorClass: 'popup__input-error_visible'
 };
 
 enableValidation(config);

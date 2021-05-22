@@ -12,5 +12,6 @@
     padding: 22px 0 25px 20px;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    max-width: 50%;
   }
 }
