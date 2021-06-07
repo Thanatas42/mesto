@@ -2,24 +2,26 @@ import Card from './Card.js';
 import FormValidator from './validate.js';
 import initialCards from './initial-Cards.js';
 
-const editProfile = document.querySelector('.popup_type_edit-form');
-const addCard = document.querySelector('.popup_type_add-card');
-const closeEditButton = document.querySelector('.popup__close-button_edit');
-const showEditButton = document.querySelector('.profile-info__edit-button');
-const saveEditButton = document.querySelector('.popup__container_type_edit-form');
-const addCardButton = document.querySelector('.profile__add-button');
-const closeAddButton = document.querySelector('.popup__close-button_add');
-const addSaveButton = document.querySelector('.popup__container_type_add-card');
+const PopupTypeEditProfile = document.querySelector('.popup_type_edit-form');
+const PopupTypeAddCard = document.querySelector('.popup_type_add-card');
+const ButtonCloseEdit = document.querySelector('.popup__close-button_edit');
+const ButtonShowEdit = document.querySelector('.profile-info__edit-button');
+const ButtonSaveEdit = document.querySelector('.popup__container_type_edit-form');
+const ButtonAddCard = document.querySelector('.profile__add-button');
+const ButtonCloseAdd = document.querySelector('.popup__close-button_add');
+const ButtonAddSave = document.querySelector('.popup__container_type_add-card');
 const cards = document.querySelector('.cards');
 const viewpopup = document.querySelector('.popup_type_show-image');
 const postName = document.querySelector('.popup__post-name');
 const link = document.querySelector('.popup__post-subname');
 const profileName = document.querySelector('.profile-info__name');
 const profileSubName = document.querySelector('.profile-info__subname');
-const popupTextName = document.querySelector('.popup__text_name');
+const InputTextName = document.querySelector('.popup__text_name');
 const popupTextSubName = document.querySelector('.popup__text_subname');
-const closeButtonView = document.querySelector('.popup__close-button_view');
-const popupAdd = document.querySelector('.popup__save-button_add');
+const ButtonCloseView = document.querySelector('.popup__close-button_view');
+const ButtonSubmitPopupAdd = document.querySelector('.popup__save-button_add');
+/*Спасибо вам за ревью! у разработчика две проблемы, именование переменных и инвалидация кэшей))
+  критические замечания устранил, замечания можно лучше поправлю к след. спринту. Горит дедлайн*/
 
 
 function closePopup(popup) {
@@ -35,9 +37,9 @@ function openPopup(popup) {
 }
 
 function editForm() {
-  profileName.textContent = popupTextName.value;
+  profileName.textContent = InputTextName.value;
   profileSubName.textContent = popupTextSubName.value;
-  closePopup(editProfile);
+  closePopup(PopupTypeEditProfile);
 }
 
 initialCards.forEach((item) => {
@@ -47,28 +49,28 @@ initialCards.forEach((item) => {
   cards.append(cardElement);
 });
 
-closeButtonView.addEventListener('click', () => {
+ButtonCloseView.addEventListener('click', () => {
   closePopup(viewpopup);
 });
 
-showEditButton.addEventListener('click', () => {
-  openPopup(editProfile);
-  popupTextName.value = profileName.textContent;
+ButtonShowEdit.addEventListener('click', () => {
+  openPopup(PopupTypeEditProfile);
+  InputTextName.value = profileName.textContent;
   popupTextSubName.value = profileSubName.textContent;
 });
-closeEditButton.addEventListener('click', () => {
-  closePopup(editProfile);
+ButtonCloseEdit.addEventListener('click', () => {
+  closePopup(PopupTypeEditProfile);
 });
-saveEditButton.addEventListener('submit', editForm);
-addCardButton.addEventListener('click', () => {
-  openPopup(addCard);
+ButtonSaveEdit.addEventListener('submit', editForm);
+ButtonAddCard.addEventListener('click', () => {
+  openPopup(PopupTypeAddCard);
 
 });
-closeAddButton.addEventListener('click', () => {
-  closePopup(addCard);
+ButtonCloseAdd.addEventListener('click', () => {
+  closePopup(PopupTypeAddCard);
 });
 
-addSaveButton.addEventListener('submit', () => {
+ButtonAddSave.addEventListener('submit', () => {
   var item = {
     name: postName.value,
     link: link.value
@@ -79,10 +81,10 @@ addSaveButton.addEventListener('submit', () => {
   cards.prepend(cardElement);
 
 
-  closePopup(addCard);
+  closePopup(PopupTypeAddCard);
   link.value = "";
   postName.value = "";
-  popupAdd.disabled = true;
+  ButtonSubmitPopupAdd.disabled = true;
 });
 
 function closePopupMouse(evt) {
@@ -106,9 +108,9 @@ const config = {
   errorClass: 'popup__input-error_visible'
 }
 
-const editPlaceFormValidator = new FormValidator(config, editProfile);
+const editPlaceFormValidator = new FormValidator(config, PopupTypeEditProfile);
 editPlaceFormValidator.enableValidation();
 
 
-const editProfileFormValidator = new FormValidator(config, addCard);
+const editProfileFormValidator = new FormValidator(config, PopupTypeAddCard);
 editProfileFormValidator.enableValidation();
