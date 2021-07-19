@@ -1,14 +1,4 @@
 class Card {
-  _cardText;
-  _cardImage;
-  _cardSelector;
-  _element;
-  _isLiked;
-  _handleOpenImage;
-  _likeButton;
-  _deleteButton;
-  _placeImage;
-
   constructor(data, cardSelector, handleOpenImage) {
     this._cardText = data.name;
     this._cardImage = data.link;

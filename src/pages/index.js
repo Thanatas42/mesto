@@ -35,7 +35,6 @@ function handlePlaceFormSubmit(formValues) {
     name: formValues['addCard'],
     link: formValues['subname']
   };
-
   imageSection.addItem(item);
 };
 

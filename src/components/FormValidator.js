@@ -1,12 +1,4 @@
 class FormValidator {
-  _inputSelector;
-  _submitButtonSelector;
-  _inputErrorClass;
-  _errorClass;
-  _currentForm;
-  _inputList;
-  _buttonElement;
-
   constructor(data, currentForm) {
     this._inputSelector = data.inputSelector;
     this._submitButtonSelector = data.submitButtonSelector;
