@@ -26,7 +26,7 @@ class FormValidator {
       this._hideInputError(inputElement);
     } else {
       this._showInputError(inputElement);
-    }
+    };
   };
 
   _hasInvalidInput = () => {
@@ -38,7 +38,7 @@ class FormValidator {
       this._buttonElement.disabled = true;
     } else {
       this._buttonElement.disabled = false;
-    }
+    };
   };
 
   _setEventListeners = () => {
@@ -62,7 +62,7 @@ class FormValidator {
       this._hideInputError(inputElement)
     });
     this._toggleButtonState();
-  }
+  };
 
   enableValidation = () => {
     this._setEventListeners();
