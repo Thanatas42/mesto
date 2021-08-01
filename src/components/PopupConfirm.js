@@ -12,8 +12,8 @@ export default class PopupConfirm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    const PoupButtonConfirm = this.popup.querySelector(".popup__save-button");
-    PoupButtonConfirm.addEventListener("click", () => {
+    const poupButtonConfirm = this.popup.querySelector(".popup__save-button");
+    poupButtonConfirm.addEventListener("click", () => {
       this._actionConfirmation().then(() => { this.closePopup(); });
     });
   };

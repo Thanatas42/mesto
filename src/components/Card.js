@@ -36,6 +36,9 @@ class Card {
       this._api.removeLike(this._id).then((card) => {
         this._likes = card.likes;
         this._updateLikesControl();
+      })
+      .catch((err) => {
+        console.log(err);
       });
     } else {
       this._api
@@ -74,7 +77,6 @@ class Card {
         })
         .catch((err) => {
           console.log(err);
-          return Promise.reject(err);
         });
     });
   };

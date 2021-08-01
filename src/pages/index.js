@@ -34,7 +34,7 @@ const imageSection = new Section((card) => {
     handleOpenImage,
     handleDeleteImageConfirmPopup,
     api,
-    currentUserId
+    userInfo.getUserInfo().id
   );
   return newCard.generateCard();
 }, ".cards");
@@ -42,16 +42,25 @@ const imageSection = new Section((card) => {
 const userInfo = new UserInfo({
   nameSelector: ".profile-info__name",
   subnameSelector: ".profile-info__subname",
+  avatarSelector: profileAvatar,
+  idSelector: currentUserId,
 });
+
+function fillCurrentData() {
+  const userData = userInfo.getUserInfo();
+  profileNameInput.value = userData.name;
+  profileDescriptionInput.value = userData.subname;
+  profileAvatar.src = userData.avatar;
+}
 
 Promise.all([api.getUserData(), api.getInitialCards()])
   .then(([userData, initialCards]) => {
     userInfo.setUserInfo({
       newNameValue: userData.name,
       newSubnameValue: userData.about,
+      newAvatarValue: userData.avatar,
+      newIDvalue: userData._id,
     });
-    profileAvatar.src = userData.avatar;
-    currentUserId = userData._id;
     initialCards.forEach((item) => imageSection.addItem(item));
   })
   .catch((err) => {
@@ -68,11 +77,12 @@ function handleProfileFormSubmit(formValues) {
       userInfo.setUserInfo({
         newNameValue: user.name,
         newSubnameValue: user.about,
+        newAvatarValue: userInfo.getUserInfo().avatar,
+        newIDvalue: userInfo.getUserInfo().id,
       });
     })
     .catch((err) => {
       console.log(err);
-      return Promise.reject(err); //
     });
 }
 
@@ -88,7 +98,6 @@ function handlePlaceFormSubmit(formValues) {
     })
     .catch((err) => {
       console.log(err);
-      return Promise.reject(err);
     });
 }
 
@@ -98,11 +107,15 @@ function handleAvatarFormSubmit(formValues) {
       avatar: formValues["avatar-link"],
     })
     .then((user) => {
-      profileAvatar.src = user.avatar;
+      userInfo.setUserInfo({
+        newNameValue: user.name,
+        newSubnameValue: user.about,
+        newAvatarValue: user.avatar,
+        newIDvalue: user._id,
+      });
     })
     .catch((err) => {
       console.log(err);
-      return Promise.reject(err);
     });
 }
 
@@ -137,11 +150,6 @@ function handleOpenImage(name, link) {
 }
 function handleDeleteImageConfirmPopup(callback) {
   popupConfirm.open(callback);
-}
-function fillCurrentData() {
-  const userData = userInfo.getUserInfo();
-  profileNameInput.value = userData.name;
-  profileDescriptionInput.value = userData.subname;
 }
 
 profileEdit.addEventListener("click", () => {
