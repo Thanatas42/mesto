@@ -1,6 +1,8 @@
 .popup__input-error {
+  display: inline-block;
   color: red;
   border: none;
+  min-height: 29px;
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: normal;

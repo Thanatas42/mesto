@@ -22,11 +22,7 @@ class FormValidator {
   };
 
   _checkInputValidity = (inputElement) => {
-    if (inputElement.validity.valid) {
-      this._hideInputError(inputElement);
-    } else {
-      this._showInputError(inputElement);
-    };
+    inputElement.validity.valid ? this._hideInputError(inputElement) : this._showInputError(inputElement);
   };
 
   _hasInvalidInput = () => {
@@ -34,11 +30,7 @@ class FormValidator {
   };
 
   _toggleButtonState = () => {
-    if (this._hasInvalidInput()) {
-      this._buttonElement.disabled = true;
-    } else {
-      this._buttonElement.disabled = false;
-    };
+    this._hasInvalidInput() ? this._buttonElement.disabled = true : this._buttonElement.disabled = false;
   };
 
   _setEventListeners = () => {

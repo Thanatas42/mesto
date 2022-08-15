@@ -1,14 +1,11 @@
 .popup {
-  visibility: hidden;
+  animation: fadeAndHide .5s forwards;
 }
 
-@keyframes move1 {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+@keyframes fadeAndHide {
+  0%   {opacity: 1;}
+  99%  {opacity: 0;}
+  100% {opacity: 0; visibility: hidden;}
 }
 
 .popup:before {

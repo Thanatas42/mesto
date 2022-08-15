@@ -88,7 +88,6 @@ class Card {
   };
 
   generateCard() {
-    // Запишем разметку в приватное поле _element.
     this._element = this._getTemplate();
     this._likeButton = this._element.querySelector(".card__like-button");
     this._deleteButton = this._element.querySelector(".card__delete-button");
