@@ -3,21 +3,18 @@ class FormValidator {
     this._inputSelector = data.inputSelector;
     this._submitButtonSelector = data.submitButtonSelector;
     this._inputErrorClass = data.inputErrorClass;
-    this._errorClass = data.errorClass;
     this._currentForm = currentForm;
   };
 
   _hideInputError = (inputElement) => {
     const errorElement = this._currentForm.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
-    errorElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
   };
 
   _showInputError = (inputElement) => {
     const errorElement = this._currentForm.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass);
-    errorElement.classList.add(this._errorClass);
     errorElement.textContent = inputElement.validationMessage;
   };
 
