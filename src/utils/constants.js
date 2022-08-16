@@ -2,7 +2,6 @@ const config = {
   inputSelector: '.popup__text',
   submitButtonSelector: '.popup__button',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_visible',
 };
 
 const profileEdit = document.querySelector(".profile-info__edit-button");
