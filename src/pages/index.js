@@ -5,7 +5,6 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
-
 import {
   profileNameInput,
   profileDescriptionInput,
@@ -14,14 +13,15 @@ import {
   config,
   profileAvatar,
   profileAvatarClick,
+  connectionSettings,
 } from "../utils/constants.js";
 import "./index.css";
 import PopupConfirm from "../components/PopupConfirm.js";
 
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-26",
+  baseUrl: connectionSettings.baseUrl,
   headers: {
-    authorization: "c483081b-d4c0-4fb6-bbaf-bcea42b7e896",
+    authorization: connectionSettings.authorization,
     "Content-Type": "application/json",
   },
 });
