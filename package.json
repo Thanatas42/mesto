@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Thanatas42/mesto/issues"
   },
-  "homepage": "https://github.com/Thanatas42/mesto#readme",
+  "homepage": "https://github.com/Thanatas42/mesto",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
