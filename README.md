@@ -62,3 +62,7 @@ user authentication is provided by transmitting a pre-issued user token in the r
 ## Link to gh-pages hosting
   
   [Mesto](https://thanatas42.github.io/mesto/)<br/>
+  
+---
+permalink: /index.html
+---
